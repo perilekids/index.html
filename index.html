@@ -14,18 +14,24 @@
             "https://chat.whatsapp.com/GviJda6wLEBEv4eDYr1yOq"
         ];
         
-        // Escolhe um link aleatório
-        var randomIndex = Math.floor(Math.random() * links.length);
-        var selectedLink = links[randomIndex];
+        // Recupera o último índice salvo no localStorage
+        var lastIndex = localStorage.getItem("lastGroupIndex");
+        lastIndex = lastIndex ? parseInt(lastIndex) : -1;
+        
+        // Escolhe o próximo grupo na sequência
+        var nextIndex = (lastIndex + 1) % links.length;
+        
+        // Salva o novo índice para a próxima visita
+        localStorage.setItem("lastGroupIndex", nextIndex);
         
         // Redireciona para o link escolhido
-        window.location.href = selectedLink;
+        window.location.href = links[nextIndex];
     </script>
 </head>
 <body>
     <p>Se não for redirecionado automaticamente, <a href="#" id="manualLink">clique aqui</a>.</p>
     <script>
-        document.getElementById("manualLink").href = selectedLink;
+        document.getElementById("manualLink").href = links[nextIndex];
     </script>
 </body>
 </html>
