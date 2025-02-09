@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0; url=#">
+    <title>Redirecionando...</title>
+    <script>
+        // Lista de links dos grupos de WhatsApp
+        var links = [
+            "https://chat.whatsapp.com/Bm4R074GA9e0DO7ytQcAs4",
+            "https://chat.whatsapp.com/JetxRg00mij4n0nE3Qm1uD",
+            "https://chat.whatsapp.com/IfKtxHg39v0HKXwwA5G848",
+            "https://wa.me/+5581993920338?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20Instagram!%20Gostaria%20de%20participar%20do%20grupo%20atacado",
+            "https://chat.whatsapp.com/GviJda6wLEBEv4eDYr1yOq"
+        ];
+        
+        // Escolhe um link aleatório
+        var randomIndex = Math.floor(Math.random() * links.length);
+        var selectedLink = links[randomIndex];
+        
+        // Redireciona para o link escolhido
+        window.location.href = selectedLink;
+    </script>
+</head>
+<body>
+    <p>Se não for redirecionado automaticamente, <a href="#" id="manualLink">clique aqui</a>.</p>
+    <script>
+        document.getElementById("manualLink").href = selectedLink;
+    </script>
+</body>
+</html>
